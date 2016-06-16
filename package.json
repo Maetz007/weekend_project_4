@@ -1,0 +1,26 @@
+{
+  "name": "week_4_assignment",
+  "version": "1.0.0",
+  "description": "fun stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git remote add origin https://github.com/Maetz007/weekend_project_4.gi"
+  },
+  "keywords": [
+    "weekend",
+    "4",
+    "project"
+  ],
+  "author": "ME!",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "pg": "^5.1.0"
+  }
+}
