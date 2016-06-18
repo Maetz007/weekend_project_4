@@ -1,0 +1,5 @@
+CREATE TABLE tasks (
+id SERIAL PRIMARY KEY NOT NULL,
+taskname VARCHAR(48),
+complete BOOLEAN
+)
