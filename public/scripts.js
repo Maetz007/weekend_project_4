@@ -30,6 +30,7 @@ $("#addTaskBtn").on("click", function(){
 //-------------------------------------------------------------------------------------------------------------------
 
 $("#taskField").on("click", ".deleteBtn", function(){
+  if (confirm("Press OK to continue with DELETE TASK") === true){
   var deleteTaskId = $(this).attr("data-id");
   var delTask = {
     "id": deleteTaskId
@@ -43,6 +44,7 @@ $("#taskField").on("click", ".deleteBtn", function(){
         tasksDisplay();
       } // end success
     }); // end ajax
+  } // end if
 }); // end delete button
 
 //-------------------------------------------------------------------------------------------------------------------

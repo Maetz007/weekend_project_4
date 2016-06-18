@@ -1,0 +1,11 @@
+.deleteBtn {
+  background-color: #FF5E5E;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  position: absolute,
+      left: 30px;
+      top: 50px;
+      width: 80px;
+      height: 30px;
+}
