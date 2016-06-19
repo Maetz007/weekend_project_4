@@ -21,6 +21,7 @@ app.get("/", function(req, res){
 app.post("/addTaskDatabase", urlencodedParser, function(req, res){
   pg.connect( connectionString, function( err, client, done ){
     client.query("INSERT INTO tasks (taskname, complete) VALUES ($1, $2)", [req.body.taskObj, req.body.completeObj]);
+    done();
   }); // end pg.connect
   res.send("res success");
 }); // end /addTaskDatabase
@@ -37,6 +38,7 @@ app.get("/getAllTasks", function(req, res){
     callData.on('end', function (){
       return res.json(dataResult);
     }); // end callData
+    done();
   }); // end connect
 }); // end app.get /getUsers
 
@@ -45,6 +47,7 @@ app.get("/getAllTasks", function(req, res){
 app.post("/deleteTask", urlencodedParser, function(req, res){
   pg.connect( connectionString, function( err, client, done ){
     client.query("DELETE FROM tasks WHERE id = ($1)", [req.body.id]);
+    done();
   }); // end pg.connect
   res.send("res success");
 }); // end /deleteTask
@@ -54,6 +57,7 @@ app.post("/deleteTask", urlencodedParser, function(req, res){
 app.post("/completeTask", urlencodedParser, function(req, res){
   pg.connect( connectionString, function( err, client, done ){
     client.query("UPDATE tasks SET complete = ($1) WHERE id = ($2)", [req.body.objCompleteBool, req.body.objCompleteId]);
+    done();
   }); // end pg.connect
   res.send("res success");
 }); // end /completeTask

@@ -1,11 +1,68 @@
-.deleteBtn {
-  background-color: #FF5E5E;
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -30px; /* Negative indent footer by it's height */
+}
+
+h1 {
+    background-color: #295783;
+    height: 60px;
+    color: white;
+    text-align: center;
+    padding: 4px;
+}
+
+.unfinishedBtn {
+  background-color: #BB2A2A;
   text-align: center;
   color: white;
   font-size: 12px;
-  position: absolute,
-      left: 30px;
-      top: 50px;
-      width: 80px;
-      height: 30px;
 }
+
+.completeBtn{
+  background-color: #29884E;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+
+.deleteBtn {
+  background-color: #1C2C9A;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+
+.container-fluid {
+  border: 2px solid #338921;
+}
+
+#push, #foot {
+  height: 30px; /* This height must correspond to #wrap margin height */
+}
+
+#foot {
+  background-color: #295783;
+  color: white;
+  text-align: center;
+}
+/*#foot {
+  position: relative;
+  margin-top: -150px;
+  height: 150px;
+  clear: both;
+  padding-top: 20px;
+  background-color: #295783;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    clear: both;
+    padding: 10px;
+}*/

@@ -30,7 +30,8 @@ $("#addTaskBtn").on("click", function(){
 //-------------------------------------------------------------------------------------------------------------------
 
 $("#taskField").on("click", ".deleteBtn", function(){
-  if (confirm("Press OK to continue with DELETE TASK") === true){
+  var confirmName = $(this).attr("data-taskname");
+  if (confirm("Press OK to DELETE '" + confirmName + "' TASK") === true){
   var deleteTaskId = $(this).attr("data-id");
   var delTask = {
     "id": deleteTaskId
@@ -40,7 +41,6 @@ $("#taskField").on("click", ".deleteBtn", function(){
       url: "/deleteTask",
       data: delTask,
       success: function(){
-        $(this).remove();
         tasksDisplay();
       } // end success
     }); // end ajax
@@ -67,7 +67,6 @@ $("#taskField").on("click", "#toggleBtn", function(){
     url: "/completeTask",
     data: comTaskObj,
     success: function(){
-      $(this).remove();
       tasksDisplay();
     } // end success
   }); // end ajax
@@ -83,22 +82,31 @@ function tasksDisplay(){
       url: "/getAllTasks",
       success: function(data){
         for (var i = 0; i < data.length; i++) {
-          var displayTasks = document.createElement("div");
-          displayTasks.id = data[i];
-          displayTasks.className = "displayTaskDiv";
-          var task = "Task: " + data[i].taskname;
-          displayTasks.textContent = task;
-          $("#taskField").append(displayTasks);
-          var deleteBtn = "<button class='deleteBtn' data-id='" + data[i].id + "'>Delete Task" + "</button>";
-          $("#taskField").append(deleteBtn);
           if (data[i].complete === false){
-            var completeBtn = "<button class='unfinishedBtn' id='toggleBtn' data-id='" + data[i].id + "'data-complete='" +
-            data[i].complete + "'>Task Unfinished" + "</button>";
-              $("#taskField").append(completeBtn);
+
+            var displayUnfinished = document.createElement("div");
+            displayUnfinished.id = data[i];
+            displayUnfinished.className = "displayUnfinishedDiv";
+            var taskUnfinished = "Task yet to do: " + data[i].taskname;
+            displayUnfinished.textContent = taskUnfinished;
+            $("#taskField").append(displayUnfinished);
+            var deleteBtnUnfinished = "<button class='deleteBtn' data-id='" + data[i].id + "'data-taskname='" + data[i].taskname + "'>Delete Task" + "</button>";
+            $("#taskField").append(deleteBtnUnfinished);
+            var unfinishedBtn = "<button class='unfinishedBtn' id='toggleBtn' data-id='" + data[i].id + "'data-complete='" + data[i].complete + "'>Task Unfinished" + "</button>";
+            $("#taskField").append(unfinishedBtn);
+
           } else {
-            var unfinishedBtn = "<button class='completeBtn' id='toggleBtn' data-id='" + data[i].id + "'data-complete='" +
-            data[i].complete + "'>Completed!" + "</button>";
-              $("#taskField").append(unfinishedBtn);
+
+            var displayComplete = document.createElement("div");
+            displayComplete.id = data[i];
+            displayComplete.className = "displayCompleteDiv";
+            var taskComplete = "Completed task: " + data[i].taskname;
+            displayComplete.textContent = taskComplete;
+            $("#taskField").append(displayComplete);
+            var deleteBtnComplete = "<button class='deleteBtn' data-id='" + data[i].id + "'data-taskname='" + data[i].taskname + "'>Delete Task" + "</button>";
+            $("#taskField").append(deleteBtnComplete);
+            var completeBtn = "<button class='completeBtn' id='toggleBtn' data-id='" + data[i].id + "'data-complete='" + data[i].complete + "'>Completed!" + "</button>";
+            $("#taskField").append(completeBtn);
           } // end else
         } // end for loop
       } // end success
