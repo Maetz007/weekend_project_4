@@ -30,7 +30,7 @@ app.post("/addTaskDatabase", urlencodedParser, function(req, res){
 app.get("/getAllTasks", function(req, res){
   var dataResult = [];
   pg.connect( connectionString, function(err, client, done){
-    var callData = client.query("SELECT * FROM tasks;");
+    var callData = client.query("SELECT * FROM tasks ORDER BY complete, false DESC;");
     callData.on('row', function(row){
       dataResult.push(row);
     });
