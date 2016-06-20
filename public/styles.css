@@ -1,3 +1,8 @@
+/* This is my first real attempt of CSS styling so I'm sure it will look rather cluncky! I originally had a floating  */
+/* footer that scrolled down as a list generated, however, I had issues with the background staying visiable. My  */
+/* answer was to simply make a static box and limited the number of tasks a user could have at one time. I know, not  */
+/* the best way to deal with it, but at least it looks better and, ultimately, works.  */
+
 html, body {
   height: 100%;
 }
