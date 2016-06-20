@@ -11,35 +11,91 @@ html, body {
 
 h1 {
     background-color: #295783;
-    height: 60px;
+    height: 65px;
     color: white;
     text-align: center;
+    font-size: 54px;
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
     padding: 4px;
+}
+
+#taskInput {
+  position: relative;
+  left: 36%;
+  width: 250px;
+  height: 35px;
+  border: 6px solid #AA661A
+}
+
+#addTaskBtn {
+  position: relative;
+  left: 37%;
+  background-color: #AA661A;
+  text-align: center;
+  color: white;
+}
+
+#displayTemp {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 500px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 36px;
+}
+
+.displayUnfinishedDiv {
+  margin: 10px auto 0 auto;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: 50%;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #E05223;
+  background:rgba(255,55,55,0.1);
 }
 
 .unfinishedBtn {
   background-color: #BB2A2A;
+  position: relative;
+  left: 45%;
   text-align: center;
   color: white;
-  font-size: 12px;
+  font-size: 8px;
 }
 
-.completeBtn{
+.displayCompleteDiv {
+  margin: 10px auto 0 auto;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: 50%;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #E05223;
+  background:rgba(55,255,55,0.1);
+}
+
+.completeBtn {
   background-color: #29884E;
+  position: relative;
+  left: 45%;
   text-align: center;
   color: white;
-  font-size: 12px;
+  font-size: 8px;
 }
 
 .deleteBtn {
   background-color: #1C2C9A;
+  position: relative;
+  left: 43%;
   text-align: center;
   color: white;
-  font-size: 12px;
+  font-size: 8px;
 }
 
-.container-fluid {
-  border: 2px solid #338921;
+#taskBox {
+  position: relative;
+  height: 690px;
+  background:rgba(255,255,255,0.65);
+  margin: 15px 10% 15px 10%;
+  border: 8px solid #33527F;
 }
 
 #push, #foot {
@@ -51,18 +107,3 @@ h1 {
   color: white;
   text-align: center;
 }
-/*#foot {
-  position: relative;
-  margin-top: -150px;
-  height: 150px;
-  clear: both;
-  padding-top: 20px;
-  background-color: #295783;
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    clear: both;
-    padding: 10px;
-}*/
